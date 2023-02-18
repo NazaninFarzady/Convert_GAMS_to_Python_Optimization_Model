@@ -18,9 +18,11 @@ Gas market data categories:
 
 
 MS Excel workbooks with input data:
-- data
+- data: Parameters values, Nodes (Geographical,liquefaction and regasification) , Terminals (pipelines, liquefaction and regasification), Distance matrix for shipping of LNG, Gas storages, Market power, Production resources, Years used in the data sets, Sectors residential and commercial sector (building heating), industry, electric power generation, transport 
 - data projection
 - data calibration
+
+Note: In MS Excel, the name manager shows definitions that are used by GAMS when reading the Workbook. It has been used in code to read relevant range of data and as the name of output file for storing the defined range.
 
 
 GGM
