@@ -1,0 +1,63 @@
+The code script (read_excel_file.py) contains a function (read_file()) which
+receives two arguments, folder name and excel file name, then it does the following:
+- Get the current directory
+- Get the sub-folder of data files
+- Get the name of excel files
+- Create a new sub-folder for output in 'CSV' files
+- Read the excel file and its defined ranges
+- Check the ranges for the following issues:
+	- if the range is empty/defined for reference cell value -> !#REF!
+	- if the range is defined as a single cell value or range of cells
+	- if the range is read from the same workbook or it is linked to another excel file
+- Store the range names as a dictionary (name: value)
+- Convert the dictionary to a data frame for each range name
+- Save the output (each data frame) as a 'CSV' file in the sub-folder 'temp' with the name of 'range name'
+
+Next
+The script reads data from 'csv' files and does the following process to get desired computed value for sets and parameters:
+1. Set zero value for 'EPS'
+2. Convert data types where is needed
+4. Combine dataframes for further computations based on columns values 
+5. Create new columns for computed values from other columns
+6. Remove rows and columns that are empty or not needed
+7. Filter columns and rows based on conditions
+8. Store main parameters' value in suitable structure as 'CSV' format
+
+Construct the GGM model
+1. Define the solver
+2. Define the model
+3. Declare the Sets, Parameters and Variables
+4. Declare the constraints and objective function
+5. load data values for components (step 2)
+6. Run model and solver
+7. Export the result in the Excel file
+
+Installing the Pyomo package
+Version of Python which supports the Pyomo:
+CPython: 3.6, 3.7, 3.8, 3.9
+PyPy: 3
+
+Installing Pyomo using Pycharm
+1. Installing miniconda
+2. Create a project in pycharm
+3. Select a python interpreter (3.8 for conda)
+4. In Terminal, enter these command
+	1.  conda install -c conda-forge pyomo pyomo.extras
+	2. conda install -c cachemeorg glpk ipopt_bin (to install LP and NLP)
+	3. conda install -c conda-forge pyomo  (installing Pyomo)
+	4. conda install -y -c pycalphad cyipopt (installing ipopt)
+
+
+Using pip:
+pip install pyomo
+
+
+INSTALLING GUROBI
+To solve GGM using Pyomo package of Python, the 'Gurobi' academic license has been used.
+To install Gurobi solver, you need to register on the website (https://www.gurobi.com/),
+download, and install the license.
+By following the documentation on the official website of Gurobi, you can install and run it on your machine.
+
+Run the project:
+execute the code in terminal:
+python main.py
